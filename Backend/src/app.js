@@ -20,34 +20,11 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  origin: (origin, callback) => {
-    console.log("CORS CHECK ORIGIN:", JSON.stringify(origin)); // 👈 debug log
+  baseUrl:"https://marathon-mfsu.onrender.com",
+  credentials:true
+}))
 
-    const allowedOrigins = [
-      "https://marathon-mfsu.onrender.com/",
-      // "http://localhost:5173",
-      // "http://localhost:3000",
-    ];
 
-    // Allow requests with no origin (Postman, server-to-server, mobile apps)
-    if (!origin) return callback(null, true);
-
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      console.log("CORS BLOCKED:", origin); // 👈 see what's being blocked
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-}));
-
-// NO app.options() line needed at all ✅
-// 2. Parsers
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
