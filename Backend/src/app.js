@@ -46,7 +46,7 @@ app.get("/", (req,res) => {
 })
 app.use("/api/auth", authRouter);
 app.use("/api/user",userRouter);
-app.use("/api/cart",authMiddleware,cartRouter);
+app.use("/api/cart",cartRouter);
 app.use("/api/product", productRouter);
 
 //error middleware after apis
