@@ -15,9 +15,12 @@ import { fileURLToPath } from 'url';
 
 
 app.use(cors({
-  baseUrl:"https://marathon-lyart.vercel.app",
-  credentials:true
-}))
+  origin: 'https://marathon-lyart.vercel.app', 
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Explicitly include OPTIONS
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+}));
 
 
 app.use(express.json());
