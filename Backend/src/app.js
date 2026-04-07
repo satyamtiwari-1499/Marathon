@@ -24,9 +24,9 @@ app.use(cors({
     console.log("CORS CHECK ORIGIN:", JSON.stringify(origin)); // 👈 debug log
 
     const allowedOrigins = [
-      "https://marthon.vercel.app",
-      "http://localhost:5173",
-      "http://localhost:3000",
+      "https://marathon-yiv3lhoww-satyams-projects-eb18cfab.vercel.app",
+      // "http://localhost:5173",
+      // "http://localhost:3000",
     ];
 
     // Allow requests with no origin (Postman, server-to-server, mobile apps)
