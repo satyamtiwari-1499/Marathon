@@ -24,7 +24,7 @@ app.use(cors({
     console.log("CORS CHECK ORIGIN:", JSON.stringify(origin)); // 👈 debug log
 
     const allowedOrigins = [
-      "https://marathon-yiv3lhoww-satyams-projects-eb18cfab.vercel.app",
+      "https://marathon-mfsu.onrender.com/",
       // "http://localhost:5173",
       // "http://localhost:3000",
     ];
