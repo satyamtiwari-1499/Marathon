@@ -13,14 +13,9 @@ import { authMiddleware } from "./middleware/auth.middleware.js";
 import path from "path";
 import { fileURLToPath } from 'url';
 
-// 1. CORS MUST BE FIRST
-app.use((req, res, next) => {
-  console.log("INCOMING ORIGIN:", JSON.stringify(req.headers.origin));
-  next();
-});
 
 app.use(cors({
-  baseUrl:"https://marathon-mfsu.onrender.com",
+  baseUrl:"https://marathon-lyart.vercel.app",
   credentials:true
 }))
 
